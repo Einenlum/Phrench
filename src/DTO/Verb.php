@@ -43,7 +43,7 @@ class Verb
 
     private function deduceStem(): string
     {
-        $getBefore = function(string $suffix) {
+        $getBefore = function (string $suffix) {
             return substr(
                 $this->infinitive,
                 0,

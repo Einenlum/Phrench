@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Phrench\Conjugator;
 
 use Phrench\ConjugatorInterface;
-use Phrench\DTO\Verb;
 use Phrench\DTO\ConjugationModality;
+use Phrench\DTO\Verb;
 
 class FirstGroup implements ConjugatorInterface
 {

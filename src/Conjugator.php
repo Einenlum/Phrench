@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Phrench;
 
-use Phrench\DTO\Verb;
 use Phrench\DTO\ConjugationModality;
+use Phrench\DTO\Verb;
 
 class Conjugator implements ConjugatorInterface
 {
