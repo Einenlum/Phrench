@@ -1,0 +1,24 @@
+{
+  "name": "einenlum/phrench",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Einenlum",
+      "email": "yann.rabiller@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Phrench\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phrench\\Tests\\": "tests/"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^7.3"
+  }
+}
