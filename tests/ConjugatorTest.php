@@ -11,10 +11,16 @@ use Phrench\DTO\Verb;
 
 class ConjugatorTest extends TestCase
 {
+    private $conjugator;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->conjugator = Factory::build();
+    }
+
     public function testFirstGroupPresent()
     {
-        $conjugator = Factory::build();
-
         $tests = [
             'marcher' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR  => 'marche',
@@ -58,12 +64,49 @@ class ConjugatorTest extends TestCase
             ],
         ];
 
-        foreach ($tests as $infinitive => $test) {
-            $verb = new Verb(Verb::FIRST_GROUP, $infinitive);
+        $this->assertSample($tests, Verb::FIRST_GROUP);
+    }
+
+    public function testSecondGroupPresent()
+    {
+        $tests = [
+            'finir' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR => 'finis',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'finis',
+                ConjugationModality::PERSON_THIRD_SINGULAR => 'finit',
+                ConjugationModality::PERSON_FIRST_PLURAL => 'finissons',
+                ConjugationModality::PERSON_SECOND_PLURAL => 'finissez',
+                ConjugationModality::PERSON_THIRD_PLURAL => 'finissent',
+            ],
+            'choisir' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR => 'choisis',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'choisis',
+                ConjugationModality::PERSON_THIRD_SINGULAR => 'choisit',
+                ConjugationModality::PERSON_FIRST_PLURAL => 'choisissons',
+                ConjugationModality::PERSON_SECOND_PLURAL => 'choisissez',
+                ConjugationModality::PERSON_THIRD_PLURAL => 'choisissent',
+            ],
+            'agir' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR => 'agis',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'agis',
+                ConjugationModality::PERSON_THIRD_SINGULAR => 'agit',
+                ConjugationModality::PERSON_FIRST_PLURAL => 'agissons',
+                ConjugationModality::PERSON_SECOND_PLURAL => 'agissez',
+                ConjugationModality::PERSON_THIRD_PLURAL => 'agissent',
+            ],
+        ];
+
+        $this->assertSample($tests, Verb::SECOND_GROUP);
+    }
+
+    private function assertSample(array $sample, string $group)
+    {
+        foreach ($sample as $infinitive => $test) {
+            $verb = new Verb($group, $infinitive);
             foreach ($test as $person => $expectedValue) {
                 $modality = new ConjugationModality($person);
                 $this->assertEquals(
-                    $conjugator->conjugate($verb, $modality),
+                    $this->conjugator->conjugate($verb, $modality),
                     $expectedValue
                 );
             }
