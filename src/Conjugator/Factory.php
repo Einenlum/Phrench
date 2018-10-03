@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Phrench\Conjugator;
 
-use Phrench\ConjugatorInterface;
-use Phrench\Conjugator\FirstGroup;
-use Phrench\Conjugator\FirstGroup\Present;
 use Phrench\Conjugator;
+use Phrench\Conjugator\FirstGroup\Present;
+use Phrench\ConjugatorInterface;
 
 abstract class Factory
 {

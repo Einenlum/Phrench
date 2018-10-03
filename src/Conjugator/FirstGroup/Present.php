@@ -44,19 +44,19 @@ class Present implements ConjugatorInterface
     private function append(Verb $verb, string $suffix, bool $replaceDangerousEnding = false): string
     {
         if (!$this->isEndingDangerous($verb->getStem()) || !$replaceDangerousEnding) {
-            return $verb->getStem() . $suffix;
+            return $verb->getStem().$suffix;
         }
 
-        $removeLastEvilLetter = function(string $stem) {
+        $removeLastEvilLetter = function (string $stem) {
             return substr($stem, 0, strlen($stem) - 1);
         };
-        $getFunnyReplacement = function(string $stem) {
+        $getFunnyReplacement = function (string $stem) {
             return self::DANGEROUS_ENDING_CONSONANTS[substr($stem, -1)];
         };
 
-        $newStem = $removeLastEvilLetter($verb->getStem()) . $getFunnyReplacement($verb->getStem());
+        $newStem = $removeLastEvilLetter($verb->getStem()).$getFunnyReplacement($verb->getStem());
 
-        return $newStem . $suffix;
+        return $newStem.$suffix;
     }
 
     private function isEndingDangerous(string $stem): bool

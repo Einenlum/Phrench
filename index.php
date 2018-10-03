@@ -1,10 +1,10 @@
 <?php
 
-use Phrench\DTO\Verb;
 use Phrench\Conjugator\Factory;
 use Phrench\DTO\ConjugationModality;
+use Phrench\DTO\Verb;
 
-require_once(__DIR__.'/vendor/autoload.php');
+require_once __DIR__.'/vendor/autoload.php';
 
 $conjugator = Factory::build();
 
@@ -19,4 +19,3 @@ $conjugatedVerb = $conjugator->conjugate($verb, $modality);
 var_dump(
     sprintf('Je %s', $conjugatedVerb)
 );
-
