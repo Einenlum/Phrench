@@ -14,23 +14,17 @@ class Present implements ConjugatorInterface
     {
         switch ($modality->getPerson()) {
             case ConjugationModality::PERSON_FIRST_SINGULAR:
-                return $this->append($verb, 'e');
+                return $this->append($verb, 'is');
             case ConjugationModality::PERSON_SECOND_SINGULAR:
-                return $this->append($verb, 'es');
-            case ConjugationModality::PERSON_THIRD_SINGULAR_MASCULINE:
-                return $this->append($verb, 'e');
-            case ConjugationModality::PERSON_THIRD_SINGULAR_FEMININE:
-                return $this->append($verb, 'e');
+                return $this->append($verb, 'is');
+            case ConjugationModality::PERSON_THIRD_SINGULAR:
+                return $this->append($verb, 'it');
             case ConjugationModality::PERSON_FIRST_PLURAL:
-                return $this->append($verb, 'ons');
+                return $this->append($verb, 'issons');
             case ConjugationModality::PERSON_SECOND_PLURAL:
-                return $this->append($verb, 'ez');
-            case ConjugationModality::PERSON_THIRD_PLURAL_MASCULINE:
-                return $this->append($verb, 'ent');
-            case ConjugationModality::PERSON_THIRD_PLURAL_FEMININE:
-                return $this->append($verb, 'ent');
-            case ConjugationModality::PERSON_THIRD_PLURAL_BOTH:
-                return $this->append($verb, 'ent');
+                return $this->append($verb, 'issez');
+            case ConjugationModality::PERSON_THIRD_PLURAL:
+                return $this->append($verb, 'issent');
         }
     }
 
