@@ -15,11 +15,6 @@ class ConjugatorTest extends TestCase
     {
         $conjugator = Factory::build();
 
-        $verb = new Verb(
-            Verb::FIRST_GROUP,
-            'marcher'
-        );
-
         $tests = [
             'marcher' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR => 'marche',
@@ -36,6 +31,30 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_FIRST_PLURAL => 'ramons',
                 ConjugationModality::PERSON_SECOND_PLURAL => 'ramez',
                 ConjugationModality::PERSON_THIRD_PLURAL => 'rament',
+            ],
+            'conjuguer' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR => 'conjugue',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'conjugues',
+                ConjugationModality::PERSON_THIRD_SINGULAR => 'conjugue',
+                ConjugationModality::PERSON_FIRST_PLURAL => 'conjuguons',
+                ConjugationModality::PERSON_SECOND_PLURAL => 'conjuguez',
+                ConjugationModality::PERSON_THIRD_PLURAL => 'conjuguent',
+            ],
+            'lancer' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR => 'lance',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'lances',
+                ConjugationModality::PERSON_THIRD_SINGULAR => 'lance',
+                ConjugationModality::PERSON_FIRST_PLURAL => 'lançons',
+                ConjugationModality::PERSON_SECOND_PLURAL => 'lancez',
+                ConjugationModality::PERSON_THIRD_PLURAL => 'lancent',
+            ],
+            'manger' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR => 'mange',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'manges',
+                ConjugationModality::PERSON_THIRD_SINGULAR => 'mange',
+                ConjugationModality::PERSON_FIRST_PLURAL => 'mangeons',
+                ConjugationModality::PERSON_SECOND_PLURAL => 'mangez',
+                ConjugationModality::PERSON_THIRD_PLURAL => 'mangent',
             ]
         ];
 
