@@ -62,6 +62,14 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'mangez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'mangent',
             ],
+            'appeler' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'appelle',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'appelles',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'appelle',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'appelons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'appelez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'appellent',
+            ],
         ];
 
         $this->assertSample($tests, Verb::FIRST_GROUP);

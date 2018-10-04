@@ -13,7 +13,12 @@ abstract class Factory
 {
     public static function build(): ConjugatorInterface
     {
-        $firstGroup = new FirstGroup([new FirstGroup\Present()]);
+        $firstGroupPresent = new FirstGroup\Present([
+            new FirstGroup\Present\DoubleConsonantsAppear(),
+            new FirstGroup\Present\SwitchingEnding(),
+            new FirstGroup\Present\Standard(),
+        ]);
+        $firstGroup = new FirstGroup([$firstGroupPresent]);
         $secondGroup = new SecondGroup([new SecondGroup\Present()]);
 
         return new Conjugator([$firstGroup, $secondGroup]);
