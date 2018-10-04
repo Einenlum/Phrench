@@ -22,6 +22,7 @@ class ConjugatorTest extends TestCase
     public function testFirstGroupPresent()
     {
         $tests = [
+            // Standards
             'marcher' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR  => 'marche',
                 ConjugationModality::PERSON_SECOND_SINGULAR => 'marches',
@@ -46,6 +47,8 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'conjuguez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'conjuguent',
             ],
+
+            // Dangerous endings
             'lancer' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR  => 'lance',
                 ConjugationModality::PERSON_SECOND_SINGULAR => 'lances',
@@ -62,6 +65,8 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'mangez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'mangent',
             ],
+
+            // Double consonants
             'appeler' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR  => 'appelle',
                 ConjugationModality::PERSON_SECOND_SINGULAR => 'appelles',
@@ -70,6 +75,8 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'appelez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'appellent',
             ],
+
+            // Bass accentuation is coming
             'acheter' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR  => 'achète',
                 ConjugationModality::PERSON_SECOND_SINGULAR => 'achètes',
@@ -85,6 +92,16 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_FIRST_PLURAL    => 'gelons',
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'gelez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'gèlent',
+            ],
+
+            // Treble accentuation is changing
+            'coopérer' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'coopère',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'coopères',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'coopère',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'coopérons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'coopérez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'coopèrent',
             ],
         ];
 

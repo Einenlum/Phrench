@@ -8,7 +8,12 @@ use Phrench\ConjugatorInterface;
 use Phrench\DTO\ConjugationModality;
 use Phrench\DTO\Verb;
 
-class AccentuationIsComing implements ConjugatorInterface
+/**
+ * In french "é" is called "accent aigu", literally "treble accent",
+ * on the contrary to "è" which is called "accent grave", literally
+ * "bass accent". I duno. Don't ask me.
+ */
+class TrebleAccentuationIsChanging implements ConjugatorInterface
 {
     public function conjugate(Verb $verb, ConjugationModality $modality): string
     {
@@ -31,32 +36,29 @@ class AccentuationIsComing implements ConjugatorInterface
     public function supports(Verb $verb, ConjugationModality $modality): bool
     {
         return $modality->getTense() === ConjugationModality::TENSE_PRESENT
-            && $this->isEndingByETorEL($verb->getStem())
-            && !in_array($verb->getInfinitive(), Verb::DOUBLE_CONSONANTS_APPEAR)
+            && $this->thereIsATrebleAccentInTheTail($verb->getStem())
         ;
     }
 
-    private function isEndingByETorEL(string $stem): bool
+    private function thereIsATrebleAccentInTheTail(string $stem): bool
     {
-        return 0 === strpos(substr($stem, -2), 'et')
-            || 0 === strpos(substr($stem, -2), 'el')
-        ;
+        return mb_strrpos($stem, 'é') === strlen($stem) - 3;
     }
 
-    private function append(Verb $verb, string $suffix, bool $addAccent = false): string
+    private function append(Verb $verb, string $suffix, bool $changeAccent = false): string
     {
         $stem = $verb->getStem();
-        if (!$addAccent) {
+        if (!$changeAccent) {
             return $stem.$suffix;
         }
 
-        // replace last "e" by "è"
+        // replace last "é" by "è"
         // $stem[strlen($stem)-2] = 'è'; does not work…
         // Seems PHP is having as hard time as foreigners with french accents
         $lastLetter = substr($stem, -1);
         $stem = sprintf(
             '%sè%s',
-            substr($stem, 0, (strlen($stem)-2)),
+            substr($stem, 0, (strlen($stem)-3)),
             $lastLetter
         );
 
