@@ -14,6 +14,7 @@ abstract class Factory
     public static function build(): ConjugatorInterface
     {
         $firstGroupPresent = new FirstGroup\Present([
+            new FirstGroup\Present\AccentuationIsComing(),
             new FirstGroup\Present\DoubleConsonantsAppear(),
             new FirstGroup\Present\SwitchingEnding(),
             new FirstGroup\Present\Standard(),

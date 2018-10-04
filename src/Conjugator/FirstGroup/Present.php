@@ -8,9 +8,6 @@ use Phrench\ConjugatorInterface;
 use Phrench\DTO\ConjugationModality;
 use Phrench\DTO\Verb;
 
-/**
- * @TODO: acheter -> achète
- */
 class Present implements ConjugatorInterface
 {
     private $conjugators;

@@ -70,6 +70,22 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'appelez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'appellent',
             ],
+            'acheter' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'achète',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'achètes',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'achète',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'achetons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'achetez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'achètent',
+            ],
+            'geler' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'gèle',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'gèles',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'gèle',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'gelons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'gelez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'gèlent',
+            ],
         ];
 
         $this->assertSample($tests, Verb::FIRST_GROUP);
