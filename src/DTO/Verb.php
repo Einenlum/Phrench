@@ -12,11 +12,7 @@ class Verb
 
     const DOUBLE_CONSONANTS_APPEAR = [
         'appeler',
-    ];
-
-    const DANGEROUS_ENDING_CONSONANTS = [
-        'c' => 'ç',
-        'g' => 'ge',
+        'jeter'
     ];
 
     private $group;

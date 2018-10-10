@@ -36,16 +36,40 @@ class BassAccentuationIsComing implements ConjugatorInterface
     public function supports(Verb $verb, ConjugationModality $modality): bool
     {
         return $modality->getTense() === ConjugationModality::TENSE_PRESENT
-            && $this->isEndingByETorEL($verb->getStem())
+            && $this->isStemCandidateToBassAccentuation($verb->getStem())
             && !in_array($verb->getInfinitive(), Verb::DOUBLE_CONSONANTS_APPEAR)
         ;
     }
 
-    private function isEndingByETorEL(string $stem): bool
+    private function isStemCandidateToBassAccentuation(string $stem): bool
     {
-        return 0 === strpos(substr($stem, -2), 'et')
-            || 0 === strpos(substr($stem, -2), 'el')
-        ;
+        $candidateEndings = [
+            'et',
+            'el',
+            'em',
+            'en',
+            'ec',
+            'ed',
+            'eg',
+            'ep',
+            'er',
+            'es',
+            'ev',
+            'evr',
+        ];
+
+        foreach ($candidateEndings as $ending) {
+            if ($this->endsBy($stem, $ending)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function endsBy(string $haystack, string $needle): bool
+    {
+        return 0 === strpos(substr($haystack, -(strlen($needle))), $needle);
     }
 
     private function append(Verb $verb, string $suffix, bool $addAccent = false): string

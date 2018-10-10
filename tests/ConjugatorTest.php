@@ -93,6 +93,30 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'gelez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'gèlent',
             ],
+            'mener' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'mène',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'mènes',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'mène',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'menons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'menez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'mènent',
+            ],
+            'peser' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'pèse',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'pèses',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'pèse',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'pesons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'pesez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'pèsent',
+            ],
+            'dépecer' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'dépèce',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'dépèces',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'dépèce',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'dépeçons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'dépecez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'dépècent',
+            ],
 
             // Treble accentuation is changing
             'coopérer' => [
