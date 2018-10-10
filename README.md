@@ -8,4 +8,4 @@ See the PHPUnit tests in `tests`.
 
 ## Tests
 
-`make test`
+`composer test`

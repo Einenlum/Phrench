@@ -22,6 +22,7 @@ class ConjugatorTest extends TestCase
     public function testFirstGroupPresent()
     {
         $tests = [
+            // Standards
             'marcher' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR  => 'marche',
                 ConjugationModality::PERSON_SECOND_SINGULAR => 'marches',
@@ -46,6 +47,8 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'conjuguez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'conjuguent',
             ],
+
+            // Dangerous endings
             'lancer' => [
                 ConjugationModality::PERSON_FIRST_SINGULAR  => 'lance',
                 ConjugationModality::PERSON_SECOND_SINGULAR => 'lances',
@@ -61,6 +64,68 @@ class ConjugatorTest extends TestCase
                 ConjugationModality::PERSON_FIRST_PLURAL    => 'mangeons',
                 ConjugationModality::PERSON_SECOND_PLURAL   => 'mangez',
                 ConjugationModality::PERSON_THIRD_PLURAL    => 'mangent',
+            ],
+
+            // Double consonants
+            'appeler' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'appelle',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'appelles',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'appelle',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'appelons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'appelez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'appellent',
+            ],
+
+            // Bass accentuation is coming
+            'acheter' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'achète',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'achètes',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'achète',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'achetons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'achetez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'achètent',
+            ],
+            'geler' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'gèle',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'gèles',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'gèle',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'gelons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'gelez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'gèlent',
+            ],
+            'mener' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'mène',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'mènes',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'mène',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'menons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'menez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'mènent',
+            ],
+            'peser' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'pèse',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'pèses',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'pèse',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'pesons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'pesez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'pèsent',
+            ],
+            'dépecer' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'dépèce',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'dépèces',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'dépèce',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'dépeçons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'dépecez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'dépècent',
+            ],
+
+            // Treble accentuation is changing
+            'coopérer' => [
+                ConjugationModality::PERSON_FIRST_SINGULAR  => 'coopère',
+                ConjugationModality::PERSON_SECOND_SINGULAR => 'coopères',
+                ConjugationModality::PERSON_THIRD_SINGULAR  => 'coopère',
+                ConjugationModality::PERSON_FIRST_PLURAL    => 'coopérons',
+                ConjugationModality::PERSON_SECOND_PLURAL   => 'coopérez',
+                ConjugationModality::PERSON_THIRD_PLURAL    => 'coopèrent',
             ],
         ];
 

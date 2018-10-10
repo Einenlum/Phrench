@@ -10,6 +10,11 @@ class Verb
     const SECOND_GROUP = 'second_group';
     const THIRD_GROUP = 'fake_dirty_group_where_all_crazy_shit_happens';
 
+    const DOUBLE_CONSONANTS_APPEAR = [
+        'appeler',
+        'jeter'
+    ];
+
     private $group;
     private $infinitive;
     private $stem;
@@ -34,6 +39,11 @@ class Verb
     public function isThirdGroup(): bool
     {
         return $this->group === self::THIRD_GROUP;
+    }
+
+    public function getInfinitive(): string
+    {
+        return $this->infinitive;
     }
 
     public function getStem(): string
